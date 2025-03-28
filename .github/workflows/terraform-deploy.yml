@@ -9,7 +9,7 @@ on:
       - main
 
 permissions:
-  id-token: write  # ✅ Required for federated authentication
+  id-token: write  # ✅ Required for federated authentication azure
   contents: read
 
 jobs:
