@@ -52,7 +52,7 @@ jobs:
         ARM_USE_OIDC: "true"
 
     - name: Terraform Plan
-      run: terraform plan
+      run: terraform plan --lock=false
       env:
         ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
         ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
@@ -60,7 +60,7 @@ jobs:
         ARM_USE_OIDC: "true"
 
     - name: Terraform Apply
-      run: terraform apply --auto-approve
+      run: terraform apply --auto-approve --lock=false
       env:
         ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
         ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
